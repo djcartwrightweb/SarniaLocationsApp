@@ -7,6 +7,7 @@
 
 import Foundation
 import MapKit
+import _MapKit_SwiftUI
 
 struct Location: Identifiable {
     let name: String
@@ -18,5 +19,13 @@ struct Location: Identifiable {
     
     var id: String {
         name + cityName
+    }
+    
+    //calculate each individual map position
+    var initialPosition: MapCameraPosition {
+        let center = coordinates
+        let span = MKCoordinateSpan(latitudeDelta: 0.1, longitudeDelta: 0.1)
+        let region = MKCoordinateRegion(center: center, span: span)
+        return .region(region)
     }
 }
