@@ -29,7 +29,8 @@ import _MapKit_SwiftUI
     }
     
     init() {
-        let locations = LocationsDataService.locations
+        let locations = SarniaLocationsDataService.locations
+//        let locations = LocationsDataService.locations
         self.locations = locations
         self.mapLocation = locations.first!
         self.updateMapRegion(location: locations.first!)
