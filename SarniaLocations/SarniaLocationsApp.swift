@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct SarniaLocationsApp: App {
+    
+    @State private var viewModel = LocationsViewModel()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(viewModel)
         }
     }
 }
